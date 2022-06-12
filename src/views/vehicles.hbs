@@ -1,0 +1,93 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3 class="mt-2">List of Vehicles</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            Number of Vehicles: {{vehicles.length}}
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="table-responsive-md">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Make</th>
+                                            <th scope="col">Model</th>
+                                            <th scope="col">Color</th>
+                                            <th scope="col">KM</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each vehicles}}
+                                        <tr>
+                                            <th scope="row">{{VehicleID}}</th>
+                                            <td>{{Make}}</td>
+                                            <td>{{Model}}</td>
+                                            <td>{{Color}}</td>
+                                            <td>{{KM}}</td>
+                                            <td>{{Location}}</td>
+                                            <td>{{Value}}</td>
+                                        </tr>
+                                       {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Vehicle Valuation Form
+                    </div>
+                    <div class="card-body">
+                        <form action="/vehicles" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="VehicleID" class="form-control" placeholder="Vehicle ID" autofocus required="required">
+                            </div>
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each vehiclesValue}}
+                                        <tr>
+                                            <td>{{Value}}</td>
+                                        </tr>
+                                       {{/each}}
+                                    </tbody>
+                                </table>
+                            <div class="form-group">
+                                <button class="btn btn-success btn-block">
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

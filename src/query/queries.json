@@ -1,0 +1,7 @@
+{
+    "getAllData" : "SELECT * FROM Vehicle",
+    "addVehicle" :"INSERT INTO Vehicle (make, model, color, km, location, value) VALUES (@Make,@Model,@Color,@KM,@Location,@Value)",
+    "deleteVehicle" : "DELETE FROM Vehicle WHERE VehicleID = @VehicleID",
+    "getVehicle" : "SELECT Value FROM Vehicle WHERE VehicleID = @VehicleID",
+    "updateVehicle" : "UPDATE Vehicle SET Make = @Make, Model = @Model, Color = @Color, KM = @KM, Location = @Location, Value = @Value WHERE VehicleID = @VehicleID"
+}

@@ -1,0 +1,20 @@
+CREATE DATABASE Azura
+GO
+
+USE Azura
+GO
+
+CREATE TABLE [dbo].[Vehicle](
+	[VehicleID] [int] IDENTITY(1,1) NOT NULL,
+	[Make] [varchar](255) NULL,
+	[Model] [varchar](255) NULL,
+	[Color] [varchar](255) NULL,
+	[KM] [varchar](255) NULL,
+	[Location] [varchar](255) NULL,
+	[Value] [varchar](255) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[VehicleID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

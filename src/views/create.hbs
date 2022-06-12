@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="card">
+                    <div class="card-body">
+                        <form action="/create" method="POST" class="myForm">
+                            <div class="form-group">
+                                <input type="text" name="Make" class="form-control" placeholder="make" autofocus required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Model" class="form-control" placeholder="model" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Color" class="form-control" placeholder="color" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="KM" class="form-control" placeholder="km" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Location" class="form-control" placeholder="location" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Value" class="form-control" placeholder="value" required="required">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-success btn-block" id="btnSave" onclick="sweetAlert()">
+                                    Save
+                                </button>
+                                <span id="spnSuccessMessage" style="visibility:hidden">Vehicle captured successfully</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+   $('#btnSave').click(function () {
+    var allFilled = true;
+    
+    $(':input:not(:button)').each(function(index, element) {
+        if (element.value === '') {
+            allFilled = false;
+        }
+    });
+    
+    if(allFilled == true){
+        document.getElementById('spnSuccessMessage').style.visibility = 'visible';
+    }
+});
+</script>
